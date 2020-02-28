@@ -1,15 +1,18 @@
 /* eslint-disable no-use-before-define */
-let myLibrary = [
-  {
-    title: 'Grand Entry', author: 'Martin', numPages: 45, status: 'unread',
-  },
-];
+let myLibrary = [];
 
 function Book(author, title, numPages, status) {
   this.author = author;
   this.title = title;
   this.numPages = numPages;
   this.status = status;
+}
+Book.prototype.toggleStatus = function toggleStatus() {
+  if (this.status === 'read') {
+    this.status = 'unread';
+  } else {
+    this.status = 'read';
+  }
 }
 
 function addBookToLibrary(book) {
@@ -26,6 +29,13 @@ app.appendChild(bookContainer);
 
 function removeBook(index) {
   myLibrary = myLibrary.filter((elem, idx) => index !== idx);
+  render();
+}
+
+function changeStatus(index) {
+  console.log(index);
+  const book = myLibrary.find((elem, idx) => index === idx);
+  book.toggleStatus();
   render();
 }
 
@@ -46,9 +56,11 @@ function render() {
 
     const status = document.createElement('button');
     status.innerText = elem.status === 'read' ? 'read' : 'unread';
+    status.classList.add('status-btn');
 
     const deleteButton = document.createElement('button');
-    deleteButton.innerText = 'Delete Button';
+    deleteButton.classList.add('delete-btn');
+    deleteButton.innerText = 'Delete';
 
     book.appendChild(title);
     book.appendChild(author);
@@ -58,6 +70,7 @@ function render() {
     bookContainer.appendChild(book);
 
     deleteButton.addEventListener('click', () => removeBook(index));
+    status.addEventListener('click', () => changeStatus(index));
   });
 }
 
@@ -84,15 +97,15 @@ const form = document.createElement('form');
 form.classList.add('form');
 
 const formHtml = `
-  <input type='text' placeholder='Title' id='title' />
-  <input type='text' placeholder='Author' id='author' />
-  <input type='number' placeholder='Pages' id='numPages' />
+    <input type='text' placeholder='Title' id='title' required/>
+    <input type='text' placeholder='Author' id='author' required/>
+    <input type='number' placeholder='Pages' id='numPages' required/>
   <select id="status">
     <option selected disabled>Enter Status</option>
     <option>Read</option>
     <option>Unread</option>
   </select>
-  <input type='submit' value='Create Book' />
+  <input class='submit-btn' type='submit' value='Create Book' />
 `;
 
 form.innerHTML = formHtml;
@@ -115,3 +128,5 @@ function toggleForm() {
 addButton.addEventListener('click', toggleForm);
 
 addBookToLibrary(new Book('Ferguson', 'Trail', 20, 'read'));
+addBookToLibrary(new Book('Jackson', 'The Might', 560, 'unread'));
+addBookToLibrary(new Book('Paul', 'Adventure', 60, 'read'));

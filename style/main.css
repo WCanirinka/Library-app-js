@@ -1,4 +1,134 @@
+body {
+  background-color: #d8d4d4;
+  text-align: center;
+}
+
+.book-container {
+  width: 50%;
+  margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.book-container div {
+  width: 32%;
+  margin-bottom: 30px;
+}
+
+.book-container div .delete-btn {
+  margin-left: 15px;
+  background-color: #bb4747;
+}
+
+.book-container div .delete-btn:hover {
+  background-color: black;
+}
+
+.book-container div h4 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  color: #791b1b;
+}
+
+.book-container div h5 {
+  font-size: 14px;
+  color: #554e4e;
+}
+
+.book-container div button {
+  border: none;
+  padding: 7px 15px;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.book-container div .status-btn {
+  background-color: #3a723a;
+}
+
+.book-container div .status-btn:hover {
+  border: 1px solid #3a723a;
+  background-color: white;
+  padding: 6px 14px;
+  color: #3a723a;
+}
+
+.add-btn {
+  border: none;
+  padding: 8px 17px;
+  border-radius: 6px;
+  background-color: #ce8f8f;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.add-btn:hover {
+  background-color: #39442f;
+  color: #fff;
+}
+
 .form {
   display: none;
+  margin: 0 auto;
+  width: 400px;
+  padding: 5px;
+}
+
+.form input[type='text'],
+.form input[type='number'], .form select {
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+}
+
+.form input[type='text']::-webkit-input-placeholder,
+.form input[type='number']::-webkit-input-placeholder, .form select::-webkit-input-placeholder {
+  font-size: 15px;
+}
+
+.form input[type='text']:-ms-input-placeholder,
+.form input[type='number']:-ms-input-placeholder, .form select:-ms-input-placeholder {
+  font-size: 15px;
+}
+
+.form input[type='text']::-ms-input-placeholder,
+.form input[type='number']::-ms-input-placeholder, .form select::-ms-input-placeholder {
+  font-size: 15px;
+}
+
+.form input[type='text']::placeholder,
+.form input[type='number']::placeholder, .form select::placeholder {
+  font-size: 15px;
+}
+
+.form select {
+  width: 90%;
+}
+
+.form .submit-btn {
+  border: none;
+  padding: 8px 17px;
+  border-radius: 6px;
+  background-color: #39442f;
+  cursor: pointer;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.form .submit-btn:hover {
+  background-color: #ce8f8f;
+  color: black;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,3 +1,95 @@
+body{
+  background-color: #d8d4d4;
+  text-align: center;
+}
+.book-container{
+  width: 50%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  flex-wrap: wrap;
+  div{
+    width: 32%;
+    margin-bottom: 30px;
+    .delete-btn{
+      margin-left: 15px;
+      background-color: rgb(187, 71, 71);
+      &:hover{
+        background-color: black;
+      }
+    }
+    h4{
+      font-family: 'Rubik', sans-serif;
+      font-size: 20px;
+      color: rgb(121, 27, 27);
+    }
+    h5{
+      font-size: 14px;
+      color: rgb(85, 78, 78);
+    }
+    button{
+      border: none;
+      padding: 7px 15px;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .status-btn{
+      background-color: rgb(58, 114, 58);
+      &:hover{
+        border: 1px solid rgb(58, 114, 58);
+        background-color: white;
+        padding: 6px 14px;
+        color: rgb(58, 114, 58);
+      }
+    }
+  }  
+}
+.add-btn{
+  border: none;
+  padding: 8px 17px;
+  border-radius: 6px;
+  background-color: rgb(206, 143, 143);
+  cursor: pointer;
+  margin-bottom: 30px;
+  &:hover{
+    background-color: rgb(57, 68, 47);
+    color: #fff;
+  }
+}
 .form {
   display: none;
+  margin: 0 auto;
+  width: 400px;
+  padding: 5px;
+  input[type = 'text'],
+  input[type = 'number'], select {
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    &::placeholder{
+      font-size: 15px;
+    }
+  }
+  select {
+    width: 90%;
+  }
+  .submit-btn{
+    border: none;
+    padding: 8px 17px;
+    border-radius: 6px;
+    background-color: rgb(57, 68, 47);
+    cursor: pointer;
+    margin-bottom: 30px;
+    color: #fff;
+    &:hover{
+      background-color: rgb(206, 143, 143);
+      color: black;
+    }
+  }
 }
