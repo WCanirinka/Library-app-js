@@ -110,13 +110,17 @@ function render() {
 function addNewBook(e) {
   e.preventDefault();
 
-  const title = document.querySelector('#title').value;
-  const author = document.querySelector('#author').value;
-  const numPages = document.querySelector('#numPages').value;
-  const status = document.querySelector('#status').value.toLowerCase();
+  const title = document.querySelector('#title');
+  const author = document.querySelector('#author');
+  const numPages = document.querySelector('#numPages');
+  const status = document.querySelector('#status');
 
-  const newBook = new Book(author, title, numPages, status);
+  const newBook = new Book(author.value, title.value, numPages.value, status.value.toLowerCase());
   addBookToLibrary(newBook);
+
+  title.value = '';
+  author.value = '';
+  numPages.value = '';
 }
 
 function toggleForm() {
