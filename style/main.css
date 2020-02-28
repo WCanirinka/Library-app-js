@@ -84,7 +84,8 @@ body {
 }
 
 .form input[type='text'],
-.form input[type='number'], .form select {
+.form input[type='number'],
+.form select {
   width: 80%;
   margin-bottom: 20px;
   padding: 10px 20px;
@@ -94,22 +95,26 @@ body {
 }
 
 .form input[type='text']::-webkit-input-placeholder,
-.form input[type='number']::-webkit-input-placeholder, .form select::-webkit-input-placeholder {
+.form input[type='number']::-webkit-input-placeholder,
+.form select::-webkit-input-placeholder {
   font-size: 15px;
 }
 
 .form input[type='text']:-ms-input-placeholder,
-.form input[type='number']:-ms-input-placeholder, .form select:-ms-input-placeholder {
+.form input[type='number']:-ms-input-placeholder,
+.form select:-ms-input-placeholder {
   font-size: 15px;
 }
 
 .form input[type='text']::-ms-input-placeholder,
-.form input[type='number']::-ms-input-placeholder, .form select::-ms-input-placeholder {
+.form input[type='number']::-ms-input-placeholder,
+.form select::-ms-input-placeholder {
   font-size: 15px;
 }
 
 .form input[type='text']::placeholder,
-.form input[type='number']::placeholder, .form select::placeholder {
+.form input[type='number']::placeholder,
+.form select::placeholder {
   font-size: 15px;
 }
 

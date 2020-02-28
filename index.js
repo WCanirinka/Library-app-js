@@ -13,19 +13,52 @@ Book.prototype.toggleStatus = function toggleStatus() {
   } else {
     this.status = 'read';
   }
-}
+};
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
   render();
 }
 
-const app = document.querySelector('#app');
+function init() {
+  const app = document.querySelector('#app');
 
-const bookContainer = document.createElement('div');
-bookContainer.classList.add('book-container');
+  const bookContainer = document.createElement('div');
+  bookContainer.classList.add('book-container');
+  app.appendChild(bookContainer);
 
-app.appendChild(bookContainer);
+  render();
+
+  const addButton = document.createElement('button');
+  addButton.innerText = 'NEW BOOK';
+  addButton.classList.add('add-btn');
+
+  const formContainer = document.createElement('div');
+  const form = document.createElement('form');
+  form.classList.add('form');
+
+  const formHtml = `
+    <input type='text' placeholder='Title' id='title' required/>
+    <input type='text' placeholder='Author' id='author' required/>
+    <input type='number' placeholder='Pages' id='numPages' required/>
+  <select id="status">
+    <option selected disabled>Enter Status</option>
+    <option>Read</option>
+    <option>Unread</option>
+  </select>
+  <input class='submit-btn' type='submit' value='Create Book' />
+`;
+
+  form.innerHTML = formHtml;
+  formContainer.appendChild(form);
+
+  form.addEventListener('submit', addNewBook);
+
+  app.appendChild(addButton);
+  app.appendChild(formContainer);
+
+  addButton.addEventListener('click', toggleForm);
+}
 
 function removeBook(index) {
   myLibrary = myLibrary.filter((elem, idx) => index !== idx);
@@ -33,13 +66,13 @@ function removeBook(index) {
 }
 
 function changeStatus(index) {
-  console.log(index);
   const book = myLibrary.find((elem, idx) => index === idx);
   book.toggleStatus();
   render();
 }
 
 function render() {
+  const bookContainer = document.querySelector('.book-container');
   bookContainer.innerHTML = '';
 
   myLibrary.forEach((elem, index) => {
@@ -74,8 +107,6 @@ function render() {
   });
 }
 
-render();
-
 function addNewBook(e) {
   e.preventDefault();
 
@@ -88,34 +119,6 @@ function addNewBook(e) {
   addBookToLibrary(newBook);
 }
 
-const addButton = document.createElement('button');
-addButton.innerText = 'NEW BOOK';
-addButton.classList.add('add-btn');
-
-const formContainer = document.createElement('div');
-const form = document.createElement('form');
-form.classList.add('form');
-
-const formHtml = `
-    <input type='text' placeholder='Title' id='title' required/>
-    <input type='text' placeholder='Author' id='author' required/>
-    <input type='number' placeholder='Pages' id='numPages' required/>
-  <select id="status">
-    <option selected disabled>Enter Status</option>
-    <option>Read</option>
-    <option>Unread</option>
-  </select>
-  <input class='submit-btn' type='submit' value='Create Book' />
-`;
-
-form.innerHTML = formHtml;
-formContainer.appendChild(form);
-
-form.addEventListener('submit', addNewBook);
-
-app.appendChild(addButton);
-app.appendChild(formContainer);
-
 function toggleForm() {
   const form = document.querySelector('.form');
   if (form.hasAttribute('style')) {
@@ -125,7 +128,7 @@ function toggleForm() {
   }
 }
 
-addButton.addEventListener('click', toggleForm);
+init();
 
 addBookToLibrary(new Book('Ferguson', 'Trail', 20, 'read'));
 addBookToLibrary(new Book('Jackson', 'The Might', 560, 'unread'));
