@@ -52,7 +52,7 @@ This project was built with Javascript
 
 ## Live Version
 
-- You can view the app [Here](https://frozen-forest-23599.herokuapp.com/)
+- You can view the app [Here](https://wcanirinka.github.io/Library-app-js/)
 
 <!-- ROADMAP -->
 ## Roadmap
