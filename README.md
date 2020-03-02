@@ -7,7 +7,6 @@
   ![Screenshot Image](images/image.png)
   <p align="center">
     Javascript Object and Object Constructors
-![Screenshot Image](images/image.png)
     <br />
     <a href="https://github.com/WCanirinka/Library-app-js"><strong>Explore the docs »</strong></a>
     <br />
