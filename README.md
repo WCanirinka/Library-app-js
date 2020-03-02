@@ -4,7 +4,7 @@
 <p align="center">
  
   <h3 align="center">Library App</h3>
-  ![Screenshot Image](/image.png)
+  ![Screenshot Image](https://github.com/WCanirinka/Library-app-js/blob/development/images/image.png)
   <p align="center">
     Javascript Object and Object Constructors
     <br />
