@@ -4,9 +4,9 @@
 <p align="center">
  
   <h3 align="center">Library App</h3>
-  ![Screenshot Image](/image.png)
   <p align="center">
     Javascript Object and Object Constructors
+![Screenshot Image](images/image.png)
     <br />
     <a href="https://github.com/WCanirinka/Library-app-js"><strong>Explore the docs »</strong></a>
     <br />
