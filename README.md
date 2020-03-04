@@ -1,10 +1,11 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Issues][issues-shield]][issues-url]
 <br />
+![Screenshot](images/image.png)
+<br />
 <p align="center">
  
   <h3 align="center">Library App</h3>
-  ![Screenshot](images/image.png)
   <p align="center">
     Javascript Object and Object Constructors
     <br />
